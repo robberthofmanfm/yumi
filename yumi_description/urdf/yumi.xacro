@@ -9,6 +9,7 @@
   <!-- some constants -->
   <xacro:property name="joint_damping" value="0.5" />
   <xacro:property name="max_effort" value="300"/>
+
  
   <xacro:macro name="yumi" params="parent name hardware_interface *origin">
 
@@ -50,7 +51,7 @@
    <!--///////////////////////////////////// RIGHT ARM ////////////////////////////////  -->
 
    <!-- joint between body and link_1_r -->
-    <joint name="${name}_joint_1_r" type="revolute">
+    <joint name="${name}_robr_joint_1" type="revolute">
       <parent link="${name}_body"/>
       <child link="${name}_link_1_r"/>
       <origin xyz="0.05355 -0.0725 0.41492" rpy="-0.9795   -0.5682   -2.3155"/>
@@ -85,7 +86,7 @@
     </link>
 
    <!-- joint between link_1_r and link_2_r -->
-    <joint name="${name}_joint_2_r" type="revolute">
+    <joint name="${name}_robr_joint_2" type="revolute">
       <parent link="${name}_link_1_r"/>
       <child link="${name}_link_2_r"/>
       <origin xyz="0.03 0.0 0.1" rpy="${PI / 2} 0.0 0.0"/>
@@ -120,7 +121,7 @@
     </link>
 
      <!-- joint between link_2_r and link_3_r -->
-      <joint name="${name}_joint_7_r" type="revolute">
+      <joint name="${name}_robr_joint_7" type="revolute">
         <parent link="${name}_link_2_r"/>
         <child link="${name}_link_3_r"/>
         <origin xyz="-0.03 0.17283 0.0" rpy="${-PI / 2} 0.0 0.0"/>
@@ -155,7 +156,7 @@
     </link>
 
     <!-- joint between link_3_r and link_4_r -->
-    <joint name="${name}_joint_3_r" type="revolute">
+    <joint name="${name}_robr_joint_3" type="revolute">
       <parent link="${name}_link_3_r"/>
       <child link="${name}_link_4_r"/>
       <origin xyz="-0.04188 0.0 0.07873" rpy="${PI / 2} ${- PI / 2} 0.0"/>
@@ -190,7 +191,7 @@
     </link>
 
     <!-- joint between link_4_r and link_5_r -->
-    <joint name="${name}_joint_4_r" type="revolute">
+    <joint name="${name}_robr_joint_4" type="revolute">
       <parent link="${name}_link_4_r"/>
       <child link="${name}_link_5_r"/>
       <origin xyz="0.0405 0.16461 0.0" rpy="-${PI / 2} 0.0 0.0"/>
@@ -225,7 +226,7 @@
     </link>
 
     <!-- joint between link_5_r and link_6_r -->
-    <joint name="${name}_joint_5_r" type="revolute">
+    <joint name="${name}_robr_joint_5" type="revolute">
       <parent link="${name}_link_5_r"/>
       <child link="${name}_link_6_r"/>
       <origin xyz="-0.027 0 0.10039" rpy="${PI / 2} 0.0 0.0"/>
@@ -260,7 +261,7 @@
     </link>
 
     <!-- joint between link_6_r and link_7_r -->
-    <joint name="${name}_joint_6_r" type="revolute">
+    <joint name="${name}_robr_joint_6" type="revolute">
       <parent link="${name}_link_6_r"/>
       <child link="${name}_link_7_r"/>
       <origin xyz="0.027 0.029 0.0" rpy="-${PI / 2} 0.0 0.0"/>
@@ -300,7 +301,7 @@
     <!--///////////////////////////////////// LEFT ARM ////////////////////////////////  -->
 
     <!-- joint between body and link_1_l -->
-    <joint name="${name}_joint_1_l" type="revolute">
+    <joint name="${name}_robl_joint_1" type="revolute">
       <parent link="${name}_body"/>
       <child link="${name}_link_1_l"/>
       <origin xyz="0.05355 0.07250 0.41492" rpy="0.9781 -0.5716 2.3180"/>
@@ -335,7 +336,7 @@
     </link>
 
     <!-- joint between link_1_l and link_2_l -->
-    <joint name="${name}_joint_2_l" type="revolute">
+    <joint name="${name}_robl_joint_2" type="revolute">
       <parent link="${name}_link_1_l"/>
       <child link="${name}_link_2_l"/>
       <origin xyz="0.03 0.0 0.1" rpy="${PI / 2} 0.0 0.0"/>
@@ -370,7 +371,7 @@
     </link>
 
     <!-- joint between link_2_l and link_3_l -->
-    <joint name="${name}_joint_7_l" type="revolute">
+    <joint name="${name}_robl_joint_7" type="revolute">
       <parent link="${name}_link_2_l"/>
       <child link="${name}_link_3_l"/>
       <origin xyz="-0.03 0.17283 0.0" rpy="-${PI / 2} 0.0 0.0"/>
@@ -405,7 +406,7 @@
     </link>
 
     <!-- joint between link_3_l and link_4_l -->
-    <joint name="${name}_joint_3_l" type="revolute">
+    <joint name="${name}_robl_joint_3" type="revolute">
       <parent link="${name}_link_3_l"/>
       <child link="${name}_link_4_l"/>
       <origin xyz="-0.04188 0.0 0.07873" rpy="${PI / 2} -${PI / 2} 0.0"/>
@@ -440,7 +441,7 @@
     </link>
 
     <!-- joint between link_4_l and link_5_l -->
-    <joint name="${name}_joint_4_l" type="revolute">
+    <joint name="${name}_robl_joint_4" type="revolute">
       <parent link="${name}_link_4_l"/>
       <child link="${name}_link_5_l"/>
       <origin xyz="0.0405 0.16461 0.0" rpy="-${PI / 2} 0.0 0.0"/>
@@ -475,7 +476,7 @@
     </link>
 
     <!-- joint between link_5_l and link_6_l -->
-    <joint name="${name}_joint_5_l" type="revolute">
+    <joint name="${name}_robl_joint_5" type="revolute">
       <parent link="${name}_link_5_l"/>
       <child link="${name}_link_6_l"/>
       <origin xyz="-0.027 0 0.10039" rpy="${PI / 2} 0.0 0.0"/>
@@ -510,7 +511,7 @@
     </link>
 
     <!-- joint between link_6_l and link_7_l -->
-    <joint name="${name}_joint_6_l" type="revolute">
+    <joint name="${name}_robl_joint_6" type="revolute">
       <parent link="${name}_link_6_l"/>
       <child link="${name}_link_7_l"/>
       <origin xyz="0.027 0.029 0.0" rpy="${-PI / 2} 0.0 0.0"/>

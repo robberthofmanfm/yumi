@@ -1,4 +1,3 @@
-
 #include <yumi_test_controllers.h>
 
 
@@ -18,8 +17,6 @@ ros::Publisher right_pub;
 ros::Subscriber sub;
 
 
-
-
 void left_vel_controller_callback(const ros::SingleSubscriberPublisher& pub)
 {
 	ROS_INFO("New subscriber!");
@@ -32,8 +29,6 @@ void right_vel_controller_callback(const ros::SingleSubscriberPublisher& pub)
 	ROS_INFO("New subscriber!");
     numSubscribersConnected++;
 }
-
-
 
 
 void joint_states_callback(const sensor_msgs::JointState &msg)
@@ -106,21 +101,21 @@ int main( int argc, char* argv[] )
 
     ROS_INFO("test_join_vel_control node started!");
 
-    left_traj.joint_names.push_back("yumi_joint_1_l");
-    left_traj.joint_names.push_back("yumi_joint_2_l");
-    left_traj.joint_names.push_back("yumi_joint_3_l");
-    left_traj.joint_names.push_back("yumi_joint_4_l");
-    left_traj.joint_names.push_back("yumi_joint_5_l");
-    left_traj.joint_names.push_back("yumi_joint_6_l");
-	left_traj.joint_names.push_back("yumi_joint_7_l");
+    left_traj.joint_names.push_back("yumi_robl_joint_1");
+    left_traj.joint_names.push_back("yumi_robl_joint_2");
+    left_traj.joint_names.push_back("yumi_robl_joint_3");
+    left_traj.joint_names.push_back("yumi_robl_joint_4");
+    left_traj.joint_names.push_back("yumi_robl_joint_5");
+    left_traj.joint_names.push_back("yumi_robl_joint_6");
+	left_traj.joint_names.push_back("yumi_robl_joint_7");
     
-	right_traj.joint_names.push_back("yumi_joint_1_r");
-	right_traj.joint_names.push_back("yumi_joint_2_r");
-	right_traj.joint_names.push_back("yumi_joint_3_r");
-	right_traj.joint_names.push_back("yumi_joint_4_r");
-	right_traj.joint_names.push_back("yumi_joint_5_r");
-	right_traj.joint_names.push_back("yumi_joint_6_r");
-	right_traj.joint_names.push_back("yumi_joint_7_r");
+	right_traj.joint_names.push_back("yumi_robr_joint_1");
+	right_traj.joint_names.push_back("yumi_robr_joint_2");
+	right_traj.joint_names.push_back("yumi_robr_joint_3");
+	right_traj.joint_names.push_back("yumi_robr_joint_4");
+	right_traj.joint_names.push_back("yumi_robr_joint_5");
+	right_traj.joint_names.push_back("yumi_robr_joint_6");
+	right_traj.joint_names.push_back("yumi_robr_joint_7");
 
 
     sub = nh.subscribe("/yumi/joint_states", 1000, joint_states_callback);

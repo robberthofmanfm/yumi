@@ -11,21 +11,21 @@ void YumiHW::create(std::string name, std::string urdf_string)
     /* ALLOCATE MEMORY */
 
     /* JOINT NAMES ARE TAKEN FROM URDF NAME CONVENTION */
-    joint_names_.push_back( robot_namespace_ + std::string("_joint_1_l") );
-    joint_names_.push_back( robot_namespace_ + std::string("_joint_2_l") );
-    joint_names_.push_back( robot_namespace_ + std::string("_joint_3_l") );
-    joint_names_.push_back( robot_namespace_ + std::string("_joint_4_l") );
-    joint_names_.push_back( robot_namespace_ + std::string("_joint_5_l") );
-    joint_names_.push_back( robot_namespace_ + std::string("_joint_6_l") );
-    joint_names_.push_back( robot_namespace_ + std::string("_joint_7_l") );
+    joint_names_.push_back( robot_namespace_ + std::string("_robl_joint_1") );
+    joint_names_.push_back( robot_namespace_ + std::string("_robl_joint_2") );
+    joint_names_.push_back( robot_namespace_ + std::string("_robl_joint_3") );
+    joint_names_.push_back( robot_namespace_ + std::string("_robl_joint_4") );
+    joint_names_.push_back( robot_namespace_ + std::string("_robl_joint_5") );
+    joint_names_.push_back( robot_namespace_ + std::string("_robl_joint_6") );
+    joint_names_.push_back( robot_namespace_ + std::string("_robl_joint_7") );
     
-    joint_names_.push_back( robot_namespace_ + std::string("_joint_1_r") );
-    joint_names_.push_back( robot_namespace_ + std::string("_joint_2_r") );
-    joint_names_.push_back( robot_namespace_ + std::string("_joint_3_r") );
-    joint_names_.push_back( robot_namespace_ + std::string("_joint_4_r") );
-    joint_names_.push_back( robot_namespace_ + std::string("_joint_5_r") );
-    joint_names_.push_back( robot_namespace_ + std::string("_joint_6_r") );
-    joint_names_.push_back( robot_namespace_ + std::string("_joint_7_r") );
+    joint_names_.push_back( robot_namespace_ + std::string("_robr_joint_1") );
+    joint_names_.push_back( robot_namespace_ + std::string("_robr_joint_2") );
+    joint_names_.push_back( robot_namespace_ + std::string("_robr_joint_3") );
+    joint_names_.push_back( robot_namespace_ + std::string("_robr_joint_4") );
+    joint_names_.push_back( robot_namespace_ + std::string("_robr_joint_5") );
+    joint_names_.push_back( robot_namespace_ + std::string("_robr_joint_6") );
+    joint_names_.push_back( robot_namespace_ + std::string("_robr_joint_7") );
     
     /* VARIABLES */
     joint_position_.resize(n_joints_);
