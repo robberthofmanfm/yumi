@@ -1,9 +1,9 @@
 controller_joint_names: 
   - yumi_robr_joint_1
   - yumi_robr_joint_2
+  - yumi_robr_joint_7
   - yumi_robr_joint_3
   - yumi_robr_joint_4
   - yumi_robr_joint_5
   - yumi_robr_joint_6
-  - yumi_robr_joint_7
   # - gripper_r_joint

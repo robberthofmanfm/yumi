@@ -1,9 +1,16 @@
 <launch>
-	<!-- Set the param that trajectory_execution_manager needs to find the controller plugin --> 
-	<arg name="moveit_controller_manager" default="moveit_simple_controller_manager/MoveItSimpleControllerManager" /> 
-	<!-- <param name="moveit_controller_manager" value="$(arg moveit_controller_manager)"/>  -->
-	<param name="moveit_controller_manager" value="moveit_ros_control_interface::MoveItControllerManager"/> 
+
+  <arg name="execution_type" default="interpolate"/> <!-- set to 'last point' to skip intermediate trajectory in fake execution -->
+
+  <!-- loads moveit_controller_manager on the parameter server which is taken as argument 
+    if no argument is passed, moveit_simple_controller_manager will be set -->
+  <arg name="moveit_controller_manager" default="moveit_simple_controller_manager/MoveItSimpleControllerManager" />
+	<!-- <param name="moveit_controller_manager" value="moveit_ros_control_interface::MoveItControllerManager"/> -->
+  <param name="moveit_controller_manager" value="$(arg moveit_controller_manager)"/>
+
 	<!-- load controller_list --> 
 	<rosparam file="$(find yumi_moveit_config)/config/controllers.yaml"/> 
 
+  <!-- loads ros_controllers to the param server -->
+  <!-- <rosparam file="$(find yumi_moveit_config)/config/ros_controllers.yaml"/> -->
 </launch>
